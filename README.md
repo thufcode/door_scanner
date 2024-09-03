@@ -13,3 +13,9 @@ Requisitos
 O script requer Python 3.x e algumas bibliotecas adicionais. As bibliotecas necessárias estão listadas no arquivo requirements.txt. Você pode instalá-las usando o comando:
 pip install -r requirements.txt
 
+Multi-threading
+O script utiliza a biblioteca threading para criar múltiplas threads que escaneiam as portas em paralelo. A fila (queue.Queue) garante que as threads não verifiquem as mesmas portas ao mesmo tempo. O uso de threading.Lock evita conflitos ao acessar recursos compartilhados, como a impressão de resultados no terminal.
+
+Barra de Progresso
+A barra de progresso (tqdm) é usada para fornecer feedback visual ao usuário sobre o andamento do escaneamento, atualizando conforme as portas são processadas.
+Ao final da execução, um resumo das portas abertas é exibido, e os resultados completos são salvos em um arquivo de texto.
